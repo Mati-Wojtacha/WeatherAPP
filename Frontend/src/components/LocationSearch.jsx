@@ -10,7 +10,7 @@ const LocationSearch = ({ onSearch }) => {
   const [error, setError] = useState(null);
 
 
-  useEffect(() => {
+useEffect(() => {
   const timer = setTimeout(() => {
     if (country.length === 2 && cityQuery.length >= 2) {
       setIsSearching(true);
@@ -18,23 +18,25 @@ const LocationSearch = ({ onSearch }) => {
 
       searchCities(country, cityQuery)
         .then(data => {
-          if (!data || data.length === 0) {
+          setCitySuggestions(data);
+          setError(null);
+          if (data.length === 1) {
+            setSelectedCity(data[0]);
+          } else {
+            setSelectedCity(null);
+          }
+        })
+        .catch(err => {
+          if (err?.status === 404) {
             setCitySuggestions([]);
             setSelectedCity(null);
             setError('Nie znaleziono miast.');
           } else {
-            setCitySuggestions(data);
-            setError(null);
-            if (data.length === 1) {
-              setSelectedCity(data[0]);
-            }
+            console.error('Search error:', err);
+            setCitySuggestions([]);
+            setSelectedCity(null);
+            setError('Wystąpił błąd podczas wyszukiwania.');
           }
-        })
-        .catch(err => {
-          console.error('Search error:', err);
-          setCitySuggestions([]);
-          setSelectedCity(null);
-          setError('Wystąpił błąd podczas wyszukiwania.');
         })
         .finally(() => setIsSearching(false));
     }
