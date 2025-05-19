@@ -57,6 +57,9 @@ header p {
   gap: 1rem;
   margin-bottom: 1rem;
 }
+.weather-main img {
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.5));
+}
 
 .weather-display-box {
   background-color: #f4f7f9;
