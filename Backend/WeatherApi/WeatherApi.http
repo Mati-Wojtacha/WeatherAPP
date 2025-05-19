@@ -1,0 +1,25 @@
+@WeatherApi_HostAddress = https://localhost:7081
+
+### Pobierz miasta dla kraju (np. PL)
+GET {{WeatherApi_HostAddress}}/api/city/by-country/PL
+Accept: application/json
+
+### Pobierz miasta dla kraju z filtrem nazwy
+GET {{WeatherApi_HostAddress}}/api/city/by-country-and-name?countryCode=PL&nameFilter=War
+Accept: application/json
+
+### Pobierz szczegó³y miasta po nazwie
+GET {{WeatherApi_HostAddress}}/api/city/by-name/Warszawa
+Accept: application/json
+
+### Pobierz miasta z paginacj¹
+GET {{WeatherApi_HostAddress}}/api/city/country/PL/paginated?page=1&pageSize=5
+Accept: application/json
+
+### Pobierz pogodê dla miasta (po cityId)
+GET {{WeatherApi_HostAddress}}/api/weather/6695624
+Accept: application/json
+
+### Pobierz aktualn¹ pogodê dla miasta (po cityId)
+GET {{WeatherApi_HostAddress}}/api/weather/actual/6695624
+Accept: application/json
