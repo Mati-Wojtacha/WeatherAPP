@@ -22,7 +22,7 @@ npm -v
 
  **Aby aplikacja frontendowa mogła poprawnie komunikować się z serwerem backendowym, należy odpowiednio skonfigurować plik .env, znajdujący się w katalogu /frontend.**
 
-**W pliku .env należy ustawić adres oraz port API, zgodnie z tym, na jakim działa backend.**
+**W pliku .env należy ustawić adres oraz port API, zgodnie z tym, na jakim działa backend. Aktualna aplikacja ta skonfigurowana jest na domyślnych ustawieniach, w przypadku zmian ustawień backendu należy ją zmodyfikować.**
 **
  ```env
  REACT_APP_API_BASE_URL=https://localhost:7081/api
