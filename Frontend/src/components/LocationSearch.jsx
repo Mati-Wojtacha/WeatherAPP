@@ -20,11 +20,7 @@ useEffect(() => {
         .then(data => {
           setCitySuggestions(data);
           setError(null);
-          if (data.length === 1) {
-            setSelectedCity(data[0]);
-          } else {
-            setSelectedCity(null);
-          }
+          data.length === 1 && setSelectedCity(data[0]);
         })
         .catch(err => {
           if (err?.status === 404) {
