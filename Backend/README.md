@@ -64,4 +64,4 @@ dotnet dev-certs https --trust
 
 ```
 
-###Pierwsze uruchomienie aplikacji może potrwać dłużej – aplikacja importuje do lokalnej bazy dane z nazwami miast, które są udostępniane przez OpenWeather.###
+### Pierwsze uruchomienie aplikacji może potrwać dłużej – aplikacja importuje do lokalnej bazy dane z nazwami miast, które są udostępniane przez OpenWeather. ###
